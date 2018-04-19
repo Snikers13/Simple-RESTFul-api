@@ -1,0 +1,37 @@
+<%- include layouts/header.ejs %>
+		<table class='table table-bordered'>
+			<tr>
+				<th width='50px'>Number</th>
+				<th>Name</th>
+				<th>Address</th>
+				<th>E-mail</th>
+				<th>Telephone</th>
+				<th>Do</th>
+			</tr>
+			<% if (data.length) {
+				for (let i = 0; i < data.length; i++) { %>
+			<tr>
+				<td><%= (i+1) %></td>
+				<td><%= data[i].name %></td>
+				<td><%= data[i].address %></td>
+				<td><%= data[i].email %></td>
+				<td><%= data[i].phone %></td>
+				<td>
+					<a class="btn btn-success" style="text-decoration: none; color: white" href='../customers/edit/<%= data[i].id %>'>Change</a>
+
+					<button type="button" class="btn btn-danger"><a style='text-decoration: none; color: white' href='../customers/delete/<%= data[i].id %>'>Delete</a></button>
+				</td>
+			</tr>
+		<% }
+		 } else { %>
+		 	<tr>
+		 		<td colspan='3'>No user</td>
+		 	</tr>
+		 <% } %>
+		 </table>
+		 <div class='data-btn'>
+		 	<button type='button' class='btn btn-default btn-sm col-md-1 col-md-offset-11' onClick="window.location.href = '/customers/add';">Add</button>
+		 </div>
+	</div>
+		 
+<%- include layouts/footer.ejs %>

@@ -1,0 +1,22 @@
+<%- include layouts/header.ejs %>
+<form method='post' action='/customers/add' class='col-md-4'>
+	<div class='form-group'>
+		<label for='name'>Name</label>
+		<input class='form-control' id='exampleInputEmail1' placeholder='Name' type='text' name='name' required>
+	</div>
+	<div class='form-group'>
+		<label for='name'>Address</label>
+		<textarea class='form-control' rows='3' name='address' required cols='30'></textarea>
+	</div>
+	<div class='form-group'>
+		<label for='exampleInputEmail1'>e-mail</label>
+		<input type='email' class='form-control' id='exampleInputEmail1' placeholder='e-mail' name='email' required>
+	</div>
+	<div class='form-group'>
+		<label for='exampleInputEmail1'>Phone</label>
+		<input type='text' class='form-control' id='exampleInputEmail1' placeholder='telephone' name='phone' required>
+	</div>
+	<button type='submit' class='btn btn-default' name='submit' value='Save'>Add</button>
+	<button type='submit' class='btn btn-default' name='cancel' value='Cancel' onClick="window.location.href='/customers';">Cancel</button>
+</form>
+<%- include layouts/footer.ejs %>
