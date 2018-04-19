@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use(connection(mysql, {
 	host: 'localhost',
 	user: 'root',
-	password: '123',
+	password: '***',
 	port: 3306,
 	database: 'example'
 	}, 'pool')
